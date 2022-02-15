@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+    <title>YourFavorite Package Maker</title>
+    <style>
+        * {font-family: 'NanumSquareAcb'; padding: 0; margin: 0;}
+        html {width: 100%; height: 100%; overflow: hidden; padding: 0; margin: 0;}
+        body {height: 592px;background: linear-gradient(to top right, white, tomato) no-repeat fixed; padding: 5%; margin: 0%;}
+        #root {width: 1052px; height: 492px; background-color: rgba(255, 255, 255, 0.5); border-radius: 15px / 15px; padding: 50px; display: flex; flex-direction: column;}
+        p, input {float: left; border: none; border-radius: 5px / 5px; vertical-align: middle; transition-duration: 0.4s; padding: 0.2%;}
+        p {margin-right: 1%;}
+        input:focus {outline: none; padding: 0.35%; transition-duration: 0.4s;}
+        form {margin-bottom: 2%;}
+        h3 {margin-bottom: 1%;}
+        textarea {width: 95%; height: 43vh; border: none; font-size: large; resize: none; padding: 1%; overflow-x: auto; white-space: nowrap;}
+
+        #titleInput {width: 15%;}
+        #aboutInput {width: 35%;}
+        #madebyInput {width: 10%;}
+        #contentInput {border-radius:  10px / 10px;}
+        #contentInput:focus {outline: none;}
+        #contentExampleBtn, #saveBtn {width: 5.5%; float: left; padding: 0.5%; background-color: white; border-radius: 5px / 5px; user-select: none; margin-right: 2%;}
+
+        ::-webkit-scrollbar {width: 8px; height: 8px;}
+        ::-webkit-scrollbar-track {display: none;}
+        ::-webkit-scrollbar-thumb {border-radius: 5px; background-color: rgba(169, 169, 169, 0.4);}
+    </style>
+</head>
+<body>
+    <div id="root">
+        <form id="titleForm">
+            <p>제목</p>
+            <input id="titleInput" type="text">
+        </form>
+        <form id="aboutForm">
+            <p>설명</p>
+            <input id="aboutInput" type="text">
+        </form>
+        <form id="madebyForm">
+            <p>만든사람</p>
+            <input id="madebyInput" type="text">
+        </form>
+
+        <div id="contentForm">
+            <h3>유튜버(이름 : URL : 색)</h3>
+            <textarea id="contentInput"></textarea>
+        </div>
+        <div id="btnArea">
+            <div id="contentExampleBtn">예시보기</div>
+            <div id="saveBtn">저장하기</div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>

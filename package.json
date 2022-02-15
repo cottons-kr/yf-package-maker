@@ -5,19 +5,69 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc index.ts && node index.js"
+    "start": "tsc index app && electron .",
+    "deploy" : "electron-builder --windows --linux"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cottons-kr/yf-package-maker.git"
   },
-  "author": "cottons",
+  "author": {
+    "name": "cottons",
+    "email": "kimtaeyoung0205@naver.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cottons-kr/yf-package-maker/issues"
   },
   "homepage": "https://github.com/cottons-kr/yf-package-maker#readme",
   "dependencies": {
-    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "typescript": "^4.5.5",
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13"
+  },
+  "build": {
+    "productName": "YourFavorite Package Maker",
+    "appId": "app.yfpm.vlab",
+    "asar": true,
+    "protocols": {
+      "name": "YourFavorite Package Maker",
+      "schemes": [
+        "yourfavorite package maker"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./resources/installer/Icon.ico"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "tar.gz"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "pkg"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "buildResources": "./resources/installer/",
+      "output": "./dist/",
+      "app": "."
+    }
   }
 }
