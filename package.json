@@ -1,0 +1,23 @@
+{
+  "name": "yf-package-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc index.ts && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cottons-kr/yf-package-maker.git"
+  },
+  "author": "cottons",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cottons-kr/yf-package-maker/issues"
+  },
+  "homepage": "https://github.com/cottons-kr/yf-package-maker#readme",
+  "dependencies": {
+    "typescript": "^4.5.5"
+  }
+}
